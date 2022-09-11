@@ -24,10 +24,6 @@ player.addEventListener('play', (event) => {
  * });
  */
 
-player.addEventListener('timeupdate', (event) => {
-	console.log("The playtime has changed!");
-});
-
 player.addEventListener('seeking', (event) => {
 	console.log("You're trying to skip around the video!");
 });
