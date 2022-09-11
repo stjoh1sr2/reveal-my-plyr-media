@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Reveal My Plyr Media</title>
+
+		<link rel="stylesheet" href="demo/reveal/css/reset.css">
+		<link rel="stylesheet" href="demo/reveal/css/reveal.css">
+		<link rel="stylesheet" href="demo/reveal/css/theme/blood.css">
+		<link rel="stylesheet" href="https://cdn.plyr.io/3.7.2/plyr.css" />
+		
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="demo/reveal/plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<p>Text Test Slide</p>
+					<aside class="notes">
+						<p>Some notes</p>
+					</aside>
+						<p>Some slide text</p>
+					<aside class="notes">
+						<p>and some more notes</p>
+					</aside>
+				</section>
+				<section>
+					<div class="plyr__video-embed" id="player">
+						<iframe
+							src="https://www.youtube.com/embed/bTqVqk7FSmY?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+							allowtransparency
+							allow="autoplay">
+						</iframe>
+					</div>
+				</section>
+			</div>
+		</div>
+
+		<script src="demo/reveal/js/reveal.js"></script>
+		<script src="demo/reveal/plugin/notes/notes.js"></script>
+		<script src="demo/reveal/plugin/markdown/markdown.js"></script>
+		<script src="demo/reveal/plugin/highlight/highlight.js"></script>
+		<script src="https://cdn.plyr.io/3.7.2/plyr.polyfilled.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
