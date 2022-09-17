@@ -43,7 +43,7 @@ function consoleLogDetails(media) {
 		playing: media.playing,
 		paused: media.paused,
 		ended: media.ended,
-		currentTime: media.currentTime,
+		currentTime: new Date(media.currentTime * 1000).toISOString().substr(11, 8),
 		seeking: media.seeking,
 		volume: media.volume * 100. + "%",
 		muted: media.muted,
@@ -53,8 +53,7 @@ function consoleLogDetails(media) {
 		captionLanguage: media.captions.active ? media.language : "N/A",
 		loop: media.loop,
 		fullscreenActive: media.fullscreen.active,
-		failed: media.failed,
-		currentTime: media.currentTime
+		failed: media.failed
 	}
 
 	console.log(details);
