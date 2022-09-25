@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="demo/reveal/css/reset.css">
 		<link rel="stylesheet" href="demo/reveal/css/reveal.css">
 		<link rel="stylesheet" href="demo/reveal/css/theme/blood.css">
+		<link rel="stylesheet" href="my-plyr-media/tracking/css/tracking.css">
 		<link rel="stylesheet" href="https://cdn.plyr.io/3.7.2/plyr.css" />
 		
 		<!-- Theme used for syntax highlighted code -->
@@ -44,18 +45,32 @@
 		<script src="demo/reveal/plugin/notes/notes.js"></script>
 		<script src="demo/reveal/plugin/markdown/markdown.js"></script>
 		<script src="demo/reveal/plugin/highlight/highlight.js"></script>
+		<script src="reveal-my-plyr-media/tracking/js/tracking"></script>
 		<script src="https://cdn.plyr.io/3.7.2/plyr.polyfilled.js"></script>
 		<script>
 			const player = new Plyr('#player');
 			
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
-
-				// Learn about plugins: https://revealjs.com/plugins/
+				tracking: {
+					apiConfig: {
+						authenticationAPI: {
+							// configure the API where to request a user token from
+							requestTokenEndpoint: 'https://learning.analytics/api/authentication/generate-token',
+						},
+						// configure where to send the tracked data
+						trackingAPI: 'https://plyr.requestcatcher.com/test',
+					},
+					consentBanner: false,
+					dwellTime: true,
+					links: true,
+					media: true,
+					slideTransitions: true,
+				},
+				dependencies: [{ src: 'reveal-my-plyr-media/tracking/js/tracking.js', async: false }],
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			}).then(() => { 
+				Reveal.getPlugin('tracking').giveConsent();
 			});
 		</script>
 	</body>
