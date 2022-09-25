@@ -9,37 +9,42 @@
 // Event listeners
 player.addEventListener('pause', (event) => {
 	console.log("You've paused!");
-	consoleLogDetails(event.detail.plyr);
+	dispatchPlyrInteraction(event.detail.plyr, 'pause');
 });
 
 player.addEventListener('playing', (event) => {
 	console.log("You're playing!");
-	consoleLogDetails(event.detail.plyr);
+	dispatchPlyrInteraction(event.detail.plyr, 'playing');
 });
 
 player.addEventListener('seeked', (event) => {
 	console.log("You've successfully skipped around the video!");
-	consoleLogDetails(event.detail.plyr);
+	dispatchPlyrInteraction(event.detail.plyr, 'seek');
 });
 
 player.addEventListener('volumechange', (event) => {
 	console.log("You've changed the volume!");
-	consoleLogDetails(event.detail.plyr);
+	dispatchPlyrInteraction(event.detail.plyr, 'volumeChange');
 });
 
 player.addEventListener('enterfullscreen', (event) => {
 	console.log("You've entered fullscreen mode!");
-	consoleLogDetails(event.detail.plyr);
+	dispatchPlyrInteraction(event.detail.plyr, 'enterFullscreen');
 });
 
 player.addEventListener('exitfullscreen', (event) => {
 	console.log("You've left fullscreen mode!");
-	consoleLogDetails(event.detail.plyr);
+	dispatchPlyrInteraction(event.detail.plyr, 'exitFullscreen');
 });
 
+function dispatchPlyrInteraction(media, type) {
+	document.dispatchEvent(new CustomEvent('plyrInteraction', { detail: buildDetails(media, type)}));
+}
+
 // Detail-printing
-function consoleLogDetails(media) {
-	const details = {
+function buildDetails(media, type) {
+	return {
+		mediaEvent: type,
 		playing: media.playing,
 		paused: media.paused,
 		ended: media.ended,
@@ -55,6 +60,4 @@ function consoleLogDetails(media) {
 		fullscreenActive: media.fullscreen.active,
 		failed: media.failed
 	}
-
-	console.log(details);
 }

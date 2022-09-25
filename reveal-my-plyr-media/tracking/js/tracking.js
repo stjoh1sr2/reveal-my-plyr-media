@@ -263,6 +263,7 @@ const RevealTracking = window.RevealTracking || (function () {
     _trackSlideTransitions();
     _trackMediaActions();
     _trackQuizzes();
+	_trackPlyrEvents();
   }
 
   /**
@@ -587,6 +588,15 @@ const RevealTracking = window.RevealTracking || (function () {
       prepareQuizzes(quizConfig);
     }
   }
+  
+  /**
+   * Tracks interactions with the plyr video/audio player.
+   */
+  function _trackPlyrEvents() {
+      document.addEventListener('plyrInteraction', function(event) {
+		_track(event.detail.mediaEvent, event.detail);
+      });
+  }
 
   // Helper methods.
 
@@ -671,7 +681,7 @@ const RevealTracking = window.RevealTracking || (function () {
       } else {
         console.warn('No user token is given.');
       }
-
+		
       // transmit tracking data
       navigator.sendBeacon(config.apiConfig.trackingAPI, JSON.stringify(postBody));
     } else {
