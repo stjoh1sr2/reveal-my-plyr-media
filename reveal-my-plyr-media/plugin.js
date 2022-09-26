@@ -23,8 +23,10 @@ player.addEventListener('seeked', (event) => {
 });
 
 player.addEventListener('volumechange', (event) => {
-	console.log("You've changed the volume!");
-	dispatchPlyrInteraction(event.detail.plyr, 'volumeChange');
+	if (event.detail.currentTime > 0) {
+		console.log("You've changed the volume!");
+		dispatchPlyrInteraction(event.detail.plyr, 'volumeChange');
+	}
 });
 
 player.addEventListener('enterfullscreen', (event) => {
