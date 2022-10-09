@@ -11,6 +11,7 @@
 		<link rel="stylesheet" href="demo/reveal/css/theme/blood.css">
 		<link rel="stylesheet" href="my-plyr-media/tracking/css/tracking.css">
 		<link rel="stylesheet" href="https://cdn.plyr.io/3.7.2/plyr.css" />
+		<script src="https://cdn.plyr.io/3.7.2/plyr.polyfilled.js"></script>
 		
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="demo/reveal/plugin/highlight/monokai.css">
@@ -29,16 +30,16 @@
 					</aside>
 				</section>
 				<section>
-					<div class="plyr__video-embed" id="player">
+					<div class="plyr__video-embed player">
 						<iframe
-							src="https://www.youtube.com/watch?v=YE7VzlLtp-4"
+							src="https://www.youtube.com/embed/YE7VzlLtp-4"
 							allowtransparency
 							allow="autoplay">
 						</iframe>
 					</div>
 				</section>
 				<section>
-					<div class="plyr__video-embed" id="player">
+					<div class="plyr__video-embed player">
 						<iframe
 							src="https://player.vimeo.com/video/1084537?h=b1b3ab5aa2"
 							allowtransparency
@@ -49,15 +50,13 @@
 			</div>
 		</div>
 	
-		<script src="reveal-my-plyr-media/plugin.js"></script>
 		<script src="demo/reveal/js/reveal.js"></script>
 		<script src="demo/reveal/plugin/notes/notes.js"></script>
 		<script src="demo/reveal/plugin/markdown/markdown.js"></script>
 		<script src="demo/reveal/plugin/highlight/highlight.js"></script>
 		<script src="reveal-my-plyr-media/tracking/js/tracking"></script>
-		<script src="https://cdn.plyr.io/3.7.2/plyr.polyfilled.js"></script>
 		<script>
-			const player = new Plyr('#player');
+			const players = Plyr.setup('.player');
 			
 			Reveal.initialize({
 				hash: true,
@@ -82,5 +81,6 @@
 				Reveal.getPlugin('tracking').giveConsent();
 			});
 		</script>
+		<script src="reveal-my-plyr-media/plugin.js"></script>
 	</body>
 </html>
