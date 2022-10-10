@@ -8,7 +8,7 @@
 
 		<link rel="stylesheet" href="demo/reveal/css/reset.css">
 		<link rel="stylesheet" href="demo/reveal/css/reveal.css">
-		<link rel="stylesheet" href="demo/reveal/css/theme/blood.css">
+		<link rel="stylesheet" href="demo/reveal/css/theme/league.css">
 		<link rel="stylesheet" href="my-plyr-media/tracking/css/tracking.css">
 		<link rel="stylesheet" href="https://cdn.plyr.io/3.7.2/plyr.css" />
 		<script src="https://cdn.plyr.io/3.7.2/plyr.polyfilled.js"></script>
@@ -18,17 +18,24 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>
-					<p>Text Test Slide</p>
-					<aside class="notes">
-						<p>Some notes</p>
-					</aside>
-						<p>Some slide text</p>
-					<aside class="notes">
-						<p>and some more notes</p>
-					</aside>
+				<section data-markdown>
+					<textarea data-template>
+						# Reveal my Plyr Media
+						Combining the capabilities of [reveal.js](https://revealjs.com/) and [plyr](https://plyr.io/) to provide interaction data for media in slideshows.
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						## Supported Media Options
+						Reveal my Plyr Media supports tracking interactions with any media type that Plyr supports, including:
+						- Youtube
+						- Vimeo
+						- HTML5 Video
+						- HTML5 Audio
+					</textarea>
 				</section>
 				<section>
+					<h2>Youtube</h2>
 					<div class="plyr__video-embed plyr__track" >
 						<iframe
 							src="https://www.youtube.com/embed/YE7VzlLtp-4"
@@ -39,6 +46,7 @@
 					</div>
 				</section>
 				<section>
+					<h2>Vimeo</h2>
 					<div class="plyr__video-embed plyr__track">
 						<iframe
 							src="https://player.vimeo.com/video/1084537?h=b1b3ab5aa2"
