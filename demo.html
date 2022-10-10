@@ -12,7 +12,6 @@
 		<link rel="stylesheet" href="my-plyr-media/tracking/css/tracking.css">
 		<link rel="stylesheet" href="https://cdn.plyr.io/3.7.2/plyr.css" />
 		<script src="https://cdn.plyr.io/3.7.2/plyr.polyfilled.js"></script>
-		
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="demo/reveal/plugin/highlight/monokai.css">
 	</head>
@@ -30,18 +29,20 @@
 					</aside>
 				</section>
 				<section>
-					<div class="plyr__video-embed player">
+					<div class="plyr__video-embed plyr__track" >
 						<iframe
 							src="https://www.youtube.com/embed/YE7VzlLtp-4"
+							allowfullscreen
 							allowtransparency
 							allow="autoplay">
 						</iframe>
 					</div>
 				</section>
 				<section>
-					<div class="plyr__video-embed player">
+					<div class="plyr__video-embed plyr__track">
 						<iframe
 							src="https://player.vimeo.com/video/1084537?h=b1b3ab5aa2"
+							allowfullscreen
 							allowtransparency
 							allow="autoplay">
 						</iframe>
@@ -56,7 +57,7 @@
 		<script src="demo/reveal/plugin/highlight/highlight.js"></script>
 		<script src="reveal-my-plyr-media/tracking/js/tracking"></script>
 		<script>
-			const players = Plyr.setup('.player');
+			const players = Plyr.setup('.plyr__track');
 			
 			Reveal.initialize({
 				hash: true,
