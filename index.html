@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Reveal My Plyr Media</title>
+
+		<link rel="stylesheet" href="demo/reveal/css/reset.css">
+		<link rel="stylesheet" href="demo/reveal/css/reveal.css">
+		<link rel="stylesheet" href="demo/reveal/css/theme/league.css">
+		<link rel="stylesheet" href="my-plyr-media/tracking/css/tracking.css">
+		<link rel="stylesheet" href="https://cdn.plyr.io/3.7.2/plyr.css" />
+		<script src="https://cdn.plyr.io/3.7.2/plyr.polyfilled.js"></script>
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="demo/reveal/plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown>
+					<textarea data-template>
+						# Reveal My Plyr Media
+						Combining the capabilities of [reveal.js](https://revealjs.com/) and [plyr](https://plyr.io/) to provide interaction data for media in slideshows.
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						## Supported Media Options
+						Reveal My Plyr Media supports tracking interactions with any media type that Plyr supports, including:
+						- Youtube
+						- Vimeo
+						- HTML5 Video
+						- HTML5 Audio
+					</textarea>
+				</section>
+				<section>
+					<h2>Youtube</h2>
+					<div class="plyr__video-embed plyr__track" >
+						<iframe
+							src="https://www.youtube.com/embed/aqz-KE-bpKQ"
+							allowfullscreen
+							allowtransparency
+							allow="autoplay">
+						</iframe>
+					</div>
+				</section>
+				<section>
+					<h2>Vimeo</h2>
+					<div class="plyr__video-embed plyr__track">
+						<iframe
+							src="https://player.vimeo.com/video/1084537?h=b1b3ab5aa2"
+							allowfullscreen
+							allowtransparency
+							allow="autoplay">
+						</iframe>
+					</div>
+				</section>
+				<section>
+					<h2>HTML5</h2>
+					<video playsinline controls class="plyr__track">
+						<source src="demo/media/BigBuckBunny.mp4" type="video/mp4" />
+						<source src="demo/media/BigBuckBunny.webm" type="video/webm" />
+						<source src="demo/media/BigBuckBunny.oog" type="video/oog" />
+					</video>
+				</section>
+			</div>
+		</div>
+	
+		<script src="demo/reveal/js/reveal.js"></script>
+		<script src="demo/reveal/plugin/notes/notes.js"></script>
+		<script src="demo/reveal/plugin/markdown/markdown.js"></script>
+		<script src="demo/reveal/plugin/highlight/highlight.js"></script>
+		<script src="reveal-my-plyr-media/tracking/js/tracking"></script>
+		<script>
+			const players = Plyr.setup('.plyr__track');
+			
+			Reveal.initialize({
+				hash: true,
+				tracking: {
+					apiConfig: {
+						authenticationAPI: {
+							// configure the API where to request a user token from
+							requestTokenEndpoint: 'https://learning.analytics/api/authentication/generate-token',
+						},
+						// configure where to send the tracked data
+						trackingAPI: 'https://c5255c65-a238-4663-9ed3-569e1dbcf530.mock.pstmn.io',
+					},
+					consentBanner: false,
+					dwellTime: true,
+					links: true,
+					media: true,
+					slideTransitions: true,
+				},
+				dependencies: [{ src: 'reveal-my-plyr-media/tracking/js/tracking.js', async: false }],
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			}).then(() => { 
+				Reveal.getPlugin('tracking').giveConsent();
+			});
+		</script>
+		<script src="reveal-my-plyr-media/plugin.js"></script>
+	</body>
+</html>
