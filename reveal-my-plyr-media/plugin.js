@@ -8,6 +8,9 @@
 var i = 0;
 document.onreadystatechange = initializeListeners();
 
+/*
+ * Binds listeners to plyr objects for certain media interactions.
+ */
 function initializeListeners() {
 	while (i < players.length) {
 		players[i].on('pause', (event) => {
@@ -46,11 +49,16 @@ function initializeListeners() {
 	}
 }
 
+/*
+ * Dispatches events to the reveal-tracking plugin.
+ */
 function dispatchPlyrInteraction(media, type) {
 	document.dispatchEvent(new CustomEvent('plyrInteraction', { detail: buildDetails(media, type)}));
 }
 
-// Detail-printing
+/* 
+ * Builds an object including media details for interactions.
+ */
 function buildDetails(media, type) {
 	return {
 		mediaEvent: type,

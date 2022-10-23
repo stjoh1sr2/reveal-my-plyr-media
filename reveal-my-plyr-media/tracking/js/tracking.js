@@ -263,7 +263,7 @@ const RevealTracking = window.RevealTracking || (function () {
     _trackSlideTransitions();
     _trackMediaActions();
     _trackQuizzes();
-	_trackPlyrEvents();
+	_trackPlyrEvents(); // Added for the reveal-my-plyr-media extension
   }
 
   /**
@@ -591,6 +591,8 @@ const RevealTracking = window.RevealTracking || (function () {
   
   /**
    * Tracks interactions with the plyr video/audio player.
+   *
+   * Added for the reveal-my-plyr-media extension.
    */
   function _trackPlyrEvents() {
       document.addEventListener('plyrInteraction', function(event) {
