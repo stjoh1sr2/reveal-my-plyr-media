@@ -6,12 +6,30 @@
  * 
  ****************************************************************/
 var i = 0;
-document.onreadystatechange = initializeListeners();
+var players;
+
+document.onreadystatechange = function() {
+	players = Plyr.setup('.plyr__track');
+	awaitPlayerInitialization();
+}
+
+/*
+ * Ensures players initialize before listeners are added.
+ */
+function awaitPlayerInitialization() {
+	if (players == null || typeof players == 'undefined') {
+		setTimeout(awaitPlayerInitialization, 200);
+	} else {
+		initializeListeners();
+	}
+}
 
 /*
  * Binds listeners to plyr objects for certain media interactions.
  */
 function initializeListeners() {
+
+	
 	while (i < players.length) {
 		players[i].on('pause', (event) => {
 			console.log("You've paused!");
