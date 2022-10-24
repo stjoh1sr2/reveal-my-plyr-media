@@ -102,6 +102,9 @@
 					media: true,
 					slideTransitions: true,
 				},
+				markdown: {
+					sanitize: false
+				},
 				dependencies: [{ src: 'reveal-my-plyr-media/tracking/js/tracking.js', async: false }],
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			}).then(() => { 
