@@ -109,6 +109,7 @@
 				dependencies: [{ src: 'reveal-my-plyr-media/tracking/js/tracking.js', async: false }],
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			}).then(() => { 
+				revealMyPlyrMedia();
 				Reveal.getPlugin('tracking').giveConsent();
 			});
 		</script>

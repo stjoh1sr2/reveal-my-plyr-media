@@ -8,7 +8,7 @@
 var i = 0;
 var players;
 
-document.onreadystatechange = function() {
+function revealMyPlyrMedia() {
 	players = Plyr.setup('.plyr__track');
 	awaitPlayerInitialization();
 }
@@ -20,7 +20,7 @@ function awaitPlayerInitialization() {
 	if (players == null || typeof players == 'undefined') {
 		setTimeout(awaitPlayerInitialization, 200);
 	} else {
-		initializeListeners();
+		initializeListeners(); 
 	}
 }
 
@@ -28,8 +28,6 @@ function awaitPlayerInitialization() {
  * Binds listeners to plyr objects for certain media interactions.
  */
 function initializeListeners() {
-
-	
 	while (i < players.length) {
 		players[i].on('pause', (event) => {
 			console.log("You've paused!");
