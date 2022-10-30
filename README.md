@@ -1,7 +1,7 @@
 # Reveal My Plyr Media
 Linking the capabilities of [plyr](https://plyr.io/) media and [reveal.js](https://revealjs.com/) slideshows, Reveal My Plyr Media aims to provide an easy way to collect data on media interactions within slideshows. By combining these accessible, feature-rich open-source frameworks and building off the useful [reveal.js-tracking](https://github.com/pantajoe/reveal.js-tracking) plugin, the Reveal My Plyr Media plugin offers additional insights into slideshow viewers' interactions with media.
 
-A Gitlab Pages demo is avaliable [here](https://stjoh1sr2.gitlab.io/reveal-my-plyr-media/) (current status: tracking is non-functional).
+A demo showing the capabilities of this project is avaliable [here](https://stjoh1sr2.github.io/reveal-my-plyr-media/).
 ## Setup
 TBA
 ## Common Issues
