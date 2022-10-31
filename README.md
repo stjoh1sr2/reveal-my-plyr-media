@@ -3,6 +3,36 @@ Linking the capabilities of [plyr](https://plyr.io/) media and [reveal.js](https
 
 A demo of a presentation using this project is [here](https://stjoh1sr2.github.io/reveal-my-plyr-media/) (make sure to turn off any ad or tracker blockers once you reach the page).
 
+### What Interactions Are Tracked?
+The interactions tracked by this plugin include:
+- Playing media
+- Pausing media
+- Seeking in the media's timeline (e.g. skipping to a specific part of a video)
+- Entering fullscreen mode for media
+- Exiting fullscreen mode for media
+
+### What Details Are Available?
+This plugin builds on the reveal.js-tracking plugin, adding to the timeline that exists there. Each media interaction contains the following information in a JSON format:
+
+| Attribute | Description |
+|--------------|-----------|
+| mediaEvent | The type of interaction that occurred. |
+| playing | Whether or not the media was actively playing at the time of interaction. |
+| paused | Whether or not the media was paused at the time of interaction. |
+| ended | Whether or not the media was finished playing at the time of interaction. |
+| currentTime | The media timestamp of the time of interaction in hh:mm:ss format.
+| seeking | Whether or not the user was skipping around in the media at the time of interaction. |
+| volume | The media volume at the time of interaction, from 0%-100%. |
+| muted | Whether or not the media was muted at the time of interaction. |
+| speed | The playback speed of the media at the time of interaction. |
+| mediaSource | A URL or filepath that links to the media. |
+| captionsActive | Whether or not captions were active at the time of interaction. |
+| captionsLanguage | The language of the captions at the time of interaction, if captions exist. |
+| captionsLanguage | The language of the captions at the time of interaction, if captions exist. |
+| loop | Whether or not the media is on loop. |
+| fullscreenActive | Whether or not the media is in fullscreen mode at the time of interaction. |
+| failed | Whether or not the media has failed to load correctly. |
+
 ## How to Use
 Reviewing Reveal.js's [documentation](https://revealjs.com/markup/) is helpful for creating a slideshow. Slideshows can be created [exclusively in HTML](https://revealjs.com/markup/) or [using Markdown](https://revealjs.com/markdown/), depending on the presentation's needs and the creator's technical abilities. Markdown may be easier to visualize than HTML and can be used with online editing programs, such as [this one](https://markdown-editor.github.io/). Reveal My Plyr Media supports either use of Reveal.
 
