@@ -16,22 +16,21 @@ This plugin builds on the reveal.js-tracking plugin, adding to the timeline that
 
 | Attribute | Description |
 |--------------|-----------|
-| mediaEvent | The type of interaction that occurred. |
-| playing | Whether or not the media was actively playing at the time of interaction. |
-| paused | Whether or not the media was paused at the time of interaction. |
-| ended | Whether or not the media was finished playing at the time of interaction. |
-| currentTime | The media timestamp of the time of interaction in hh:mm:ss format.
-| seeking | Whether or not the user was skipping around in the media at the time of interaction. |
-| volume | The media volume at the time of interaction, from 0%-100%. |
-| muted | Whether or not the media was muted at the time of interaction. |
-| speed | The playback speed of the media at the time of interaction. |
-| mediaSource | A URL or filepath that links to the media. |
-| captionsActive | Whether or not captions were active at the time of interaction. |
-| captionsLanguage | The language of the captions at the time of interaction, if captions exist. |
-| captionsLanguage | The language of the captions at the time of interaction, if captions exist. |
-| loop | Whether or not the media is on loop. |
-| fullscreenActive | Whether or not the media is in fullscreen mode at the time of interaction. |
-| failed | Whether or not the media has failed to load correctly. |
+| mediaEvent | The type of interaction that occurred |
+| playing | Whether or not the media was actively playing at the time of interaction |
+| paused | Whether or not the media was paused at the time of interaction |
+| ended | Whether or not the media was finished playing at the time of interaction |
+| currentTime | The media timestamp of the time of interaction in hh:mm:ss format
+| seeking | Whether or not the user was skipping around in the media at the time of interaction |
+| volume | The media volume at the time of interaction, from 0%-100% |
+| muted | Whether or not the media was muted at the time of interaction |
+| speed | The playback speed of the media at the time of interaction |
+| mediaSource | A URL or filepath that links to the media |
+| captionsActive | Whether or not captions were active at the time of interaction |
+| captionsLanguage | The language of the captions at the time of interaction, if captions exist |
+| loop | Whether or not the media is on loop |
+| fullscreenActive | Whether or not the media is in fullscreen mode at the time of interaction |
+| failed | Whether or not the media has failed to load correctly |
 
 ## How to Use
 Reviewing Reveal.js's [documentation](https://revealjs.com/markup/) is helpful for creating a slideshow. Slideshows can be created [exclusively in HTML](https://revealjs.com/markup/) or [using Markdown](https://revealjs.com/markdown/), depending on the presentation's needs and the creator's technical abilities. Markdown may be easier to visualize than HTML and can be used with online editing programs, such as [this one](https://markdown-editor.github.io/). Reveal My Plyr Media supports either use of Reveal.
