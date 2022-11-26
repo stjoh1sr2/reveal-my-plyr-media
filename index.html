@@ -5,12 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<title>Reveal My Plyr Media</title>
-		<style>
-			.plyr--video {
-				font-size: 0;
-			}
-		</style>
-
+		<link rel="stylesheet" href="demo/demo-styles.css">
 		<link rel="stylesheet" href="demo/reveal/css/reset.css">
 		<link rel="stylesheet" href="demo/reveal/css/reveal.css">
 		<link rel="stylesheet" href="demo/reveal/css/theme/league.css">
@@ -20,6 +15,11 @@
 		<link rel="stylesheet" href="demo/reveal/plugin/highlight/monokai.css">
 	</head>
 	<body>
+		<!-- Begin demo modal, which is not required for implementation of the plugin -->
+		<div class="demo-banner">
+			<p id="banner-message">Latest Media Interaction: N/A</p>
+		</div>
+		<!-- End modal -->
 		<div class="reveal">
 			<div class="slides">
 				<section data-markdown>
@@ -38,7 +38,7 @@
 						*   Vimeo
 						*   HTML5 Video
 						*   HTML5 Audio
-
+		
 						---
 
 						## Youtube

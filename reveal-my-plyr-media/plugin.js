@@ -58,6 +58,17 @@ function initializeListeners() {
  */
 function dispatchPlyrInteraction(media, type) {
 	document.dispatchEvent(new CustomEvent('plyrInteraction', { detail: buildDetails(media, type)}));
+	
+	// Update latest interaction (for demo only)
+	var infoDiv = document.getElementById('banner-message');
+	if (infoDiv != null && type != "exitFullscreen" && type != "enterFullscreen") {
+		infoDiv.innerHTML = "Latest Media Interaction: " + type + " (" + 
+			(media.playing ? "playing, " : "paused, ") +
+			"timestamp: " + (new Date(media.currentTime * 1000).toISOString().substr(11, 8)) + ", " + 
+			(media.seeking ? "seeking, " : "not seeking, ") +
+			"volume: " + media.volume * 100 + "%, " +
+			"speed: " + media.speed + "x)";
+	}
 }
 
 /* 
