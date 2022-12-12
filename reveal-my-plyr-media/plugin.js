@@ -5,7 +5,6 @@
  * on video/audio interactions and events.
  * 
  ****************************************************************/
-var i = 0;
 var players;
 
 function revealMyPlyrMedia() {
@@ -28,6 +27,7 @@ function awaitPlayerInitialization() {
  * Binds listeners to plyr objects for certain media interactions.
  */
 function initializeListeners() {
+	var i = 0;
 	while (i < players.length) {
 		players[i].on('pause', (event) => {
 			dispatchPlyrInteraction(event.detail.plyr, 'pause');
